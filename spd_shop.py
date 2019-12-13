@@ -7,6 +7,9 @@ import time
 import random
 
 DESKTOP_PATH = os.path.join(os.path.expanduser('~'), "Desktop")
+# import sys#
+# print(';'.join([f'"{x}"' for x in sys.path]))#
+# exit()#
 
 
 class Spider:
@@ -38,7 +41,7 @@ class Spider:
     def notepad_txt(self):
         if not os.path.exists(self.custom_urls_path):
             with open(self.custom_urls_path, 'w', encoding='utf-8') as f:
-                f.write('从第二行开始输入url，每个url占一行，输入完后关闭记事本: ')
+                f.write('从第二行开始输入url，每个url占一行，输入完后关闭记事本: \n')
 
         os.popen(f'notepad "{self.custom_urls_path}"').read()
 
